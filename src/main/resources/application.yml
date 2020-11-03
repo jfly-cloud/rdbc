@@ -1,0 +1,12 @@
+spring:
+  r2dbc:
+    url: r2dbcs:mysql://192.168.102.88:3307/mol
+    username: root
+    password: root12345
+    pool:
+      max-size: 1000
+      max-create-connection-time: 1s
+    properties:
+      #SslMode考虑安全级别和SSL验证，在将SSL模式更改为REQUIRED更高或更高版本之前，请确保数据库服务器支持SSL
+      sslMode: DISABLED
+
