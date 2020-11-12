@@ -19,6 +19,7 @@
         <pool.version>0.8.5.RELEASE</pool.version>
         <lombok.vsersion>1.18.16</lombok.vsersion>
         <excel.version>3.9.7</excel.version>
+        <mapstruct.version>1.4.1.Final</mapstruct.version>
     </properties>
 
     <dependencies>
@@ -54,6 +55,16 @@
             <groupId>com.github.liaochong</groupId>
             <artifactId>myexcel</artifactId>
             <version>${excel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${mapstruct.version}</version>
         </dependency>
     </dependencies>
 
