@@ -5,6 +5,7 @@ import com.jfly.entity.EmployeeDTO;
 import com.jfly.entity.PanamaEndorsementForm;
 import com.jfly.mapper.EmployeeMapper;
 import com.jfly.service.IPanamaEndorsementFormService;
+import com.jfly.service.UserRegistryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,8 @@ import java.util.Date;
 public class PanamaEndorsementFormController {
     @Autowired
     private IPanamaEndorsementFormService service;
+    @Autowired
+    private UserRegistryService userRegistryService;
 
     @PostMapping("/select/v1")
     public Mono<PanamaEndorsementForm> select2(@RequestBody PanamaEndorsementForm form) {
@@ -50,5 +53,10 @@ public class PanamaEndorsementFormController {
         employee.setStartDt(new Date());
         EmployeeDTO employeeDTO = EmployeeMapper.INSTANCE.employeetoEmployeeDTO(employee);
         return employeeDTO.toString();
+    }
+
+    @PostMapping("/user/v1")
+    public void  userRegistry() {
+        userRegistryService.userRegistry("你好");
     }
 }
