@@ -11,6 +11,14 @@ public class VehicleMutation implements GraphQLMutationResolver {
     @Autowired
     private IVehicleService vehicleService;
 
+    /**
+     * getCreateVehicle 和 createVehicle
+     * @param type
+     * @param modelCode
+     * @param brandName
+     * @param launchDate
+     * @return
+     */
     public Vehicle createVehicle(String type, String modelCode, String brandName, String launchDate) {
         return this.vehicleService.createVehicle(type, modelCode, brandName, launchDate);
     }

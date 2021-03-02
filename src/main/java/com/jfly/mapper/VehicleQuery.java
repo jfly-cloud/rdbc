@@ -15,11 +15,16 @@ public class VehicleQuery implements GraphQLQueryResolver {
     @Autowired
     private IVehicleService vehicleService;
 
-    public List<Vehicle> getVehicles(Integer count) {
+    /**
+     * getVehicles 和  vehicles
+     * @param count
+     * @return
+     */
+    public List<Vehicle> vehicles(Integer count) {
         return vehicleService.getAllVehicles(count);
     }
 
-    public Optional<Vehicle> getVehicle(Long id) {
+    public Optional<Vehicle> vehicle(Long id) {
         return vehicleService.getVehicle(id);
     }
 }
